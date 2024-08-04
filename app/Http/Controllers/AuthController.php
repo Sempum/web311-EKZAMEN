@@ -12,12 +12,19 @@ use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
+    /**
+     * view register page
+     */
     public function registerIndex()
     {
         return view('layouts.auth.register', [
             'captcha' =>Captcha::all()->random(),
         ]);
     }
+
+    /**
+     * store user to database
+     */
 
     public function register(Request $request)
     {
@@ -52,10 +59,18 @@ class AuthController extends Controller
         return redirect()->route('app.index');
     }
 
+    /**
+     * view login page
+     */
+
     public function loginIndex()
     {
         return view('layouts.auth.login');
     }
+
+    /**
+     * function login to registered users
+     */
 
     public function login(Request $request)
     {
@@ -75,11 +90,19 @@ class AuthController extends Controller
         ])->onlyInput('email');
     }
 
+    /**
+     * function log-out for users
+     */
+
     public function logout()
     {
         Auth::logout();
         return redirect()->route('app.index');
     }
+
+    /**
+     * function to get captcha ID for function register
+     */
 
     public function getCode(Captcha $captcha)
     {

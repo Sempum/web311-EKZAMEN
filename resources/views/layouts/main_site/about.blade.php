@@ -101,19 +101,19 @@
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <!-- single nav link -->
-                                    <a class="nav-item nav-link active" id="nav-first-tab" data-toggle="tab"  role="tab" aria-controls="nav-first" aria-selected="true">
+                                    <a class="nav-item nav-link active" id="nav-first-tab" href="#nav-first" data-toggle="tab"  role="tab" aria-controls="nav-first" aria-selected="true">
                                         <div class="box-image">
                                             <img src={{ asset("assets/img/about-tab-1.jpg") }} alt="">
                                         </div>
                                     </a>
                                     <!-- single nav link -->
-                                    <a class="nav-item nav-link" id="nav-second-tab" data-toggle="tab"  role="tab" aria-controls="nav-second" aria-selected="false">
+                                    <a class="nav-item nav-link" id="nav-second-tab" href="#nav-second" data-toggle="tab"  role="tab" aria-controls="nav-second" aria-selected="false">
                                         <div class="box-image">
                                             <img src={{ asset("assets/img/about-tab-2.jpg") }} alt="">
                                         </div>
                                     </a>
                                     <!-- single nav link -->
-                                    <a class="nav-item nav-link" id="nav-third-tab" data-toggle="tab"  role="tab" aria-controls="nav-third" aria-selected="false">
+                                    <a class="nav-item nav-link" id="nav-third-tab" href="#nav-third" data-toggle="tab"  role="tab" aria-controls="nav-third" aria-selected="false">
                                         <div class="box-image">
                                             <img src={{ asset("assets/img/about-tab-3.jpg") }} alt="">
                                         </div>

@@ -19,7 +19,7 @@
 
         <div class="form-group mb-3">
             <label for="description">Описание</label>
-            <textarea rows="3" class="form-control" name="description" aria-label="With textarea">{{ old('description', $product->description) }}</textarea>
+            <textarea rows="3" class="form-control" name="description">{{ old('description', $product->description) }}</textarea>
             @error('description')
             <small class="text-danger">{{ $message }}</small>
             @enderror

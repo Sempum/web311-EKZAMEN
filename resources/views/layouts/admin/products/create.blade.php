@@ -17,7 +17,7 @@
 
         <div class="form-group mb-3">
             <label for="description">Описание</label>
-            <textarea class="form-control" name="description" aria-label="With textarea" rows="3">
+            <textarea class="form-control" name="description" rows="3">
                 {{ old('description') }}
             </textarea>
             @error('description')

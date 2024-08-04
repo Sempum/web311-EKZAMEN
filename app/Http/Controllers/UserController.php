@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission as ModelsPermission;
@@ -54,14 +53,6 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(User $user)
@@ -101,6 +92,10 @@ class UserController extends Controller
         return back();
     }
 
+    /**
+     * Ban users
+     */
+
     public function ban(User $user, Request $request)
     {
         $user->banned_till = 0;
@@ -109,6 +104,9 @@ class UserController extends Controller
         return back();
     }
 
+    /**
+     * Unban users
+     */
     public function unban(User $user, Request $request)
     {
         $user->banned_till = null;

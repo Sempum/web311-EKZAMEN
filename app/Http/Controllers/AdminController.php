@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    /**
+     * view admin page
+     */
     public function dashboard()
     {
         return view('layouts.admin.dashboard' , [

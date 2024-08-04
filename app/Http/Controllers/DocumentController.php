@@ -75,12 +75,20 @@ class DocumentController extends Controller
         return back();
     }
 
+    /**
+     * view page for users who wants to add document
+     */
+
     public function createMain()
     {
         return view('layouts.main_site.documentCreate', [
             'products' => Product::all()->sortBy('name')
         ]);
     }
+
+    /**
+     * store users documents to database
+     */
 
     public function storeMain(Request $request)
     {
@@ -102,6 +110,10 @@ class DocumentController extends Controller
 
         return back()->with('success', 'Документация была добавления. Она появится после проверки администрацией проекта. Спасибо!');
     }
+
+    /**
+     * Approve users document to view on main site
+     */
 
     public function approveDoc(Document $document, Request $request)
     {

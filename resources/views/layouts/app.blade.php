@@ -125,7 +125,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="w-100 d-md-flex d-block justify-content-between">
-							<p>Copyright &copy; 2018 <a href="">Tech-city</a> All Rights Reserved</p>
+							<p>Copyright &copy; 2024 <a href="{{ route('app.index') }}">Tech-city</a> All Rights Reserved</p>
 						</div>
 					</div>
 				</div>

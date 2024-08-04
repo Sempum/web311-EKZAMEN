@@ -29,8 +29,8 @@
 <div class="container">
     <!-- search form -->
     <form class="d-flex mb-3" role="search" method="GET" action="{{ route('app.searchProduct', $category->slug) }}">
-        <input class="form-control mr-2" placeholder="Search" name="search">
-        <button class="btn btn-outline-success" name="searchBtn" type="submit">Search</button>
+        <input class="form-control mr-2" placeholder="Найти модель" name="search">
+        <button class="btn btn-outline-success" name="searchBtn" type="submit">Найти</button>
     </form>
 
     <!-- main content view products -->
@@ -80,11 +80,11 @@
 <!-- main content if there is no products -->
 <div class="container">
     <form class="d-flex mb-3" role="search" method="GET" action="{{ route('app.searchProduct', $category->slug) }}">
-        <input class="form-control me-2" placeholder="Search" name="search">
-        <button class="btn btn-outline-success" name="searchBtn" type="submit">Search</button>
+        <input class="form-control me-2" placeholder="Найти модель" name="search">
+        <button class="btn btn-outline-success" name="searchBtn" type="submit">Найти</button>
     </form>
 
-    <h5 class="title text-danger">По Вашему запросу не было найдено подходящей техники</h5>
+    <h5 class="title text-danger text-center my-5">По Вашему запросу не было найдено подходящей техники</h5>
 
     <!-- main content if there is no products -->
     @if ($user)

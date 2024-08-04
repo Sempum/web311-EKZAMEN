@@ -25,18 +25,18 @@
 
                 @if ($user)
                 <div class="d-flex align-items-center justify-content-center mx-3">
+                    @hasanyrole('admin|moderator')
+                        <a class="btn btn-info btn-sm" style="margin-right: 5px" href="{{ route('admin.dashboard') }}">Перейти в админ панель</a>
+                    @endhasanyrole
                     <form action="{{ route('auth.logout') }}" method="POST">
                         @csrf
-                        <button class="btn btn-danger btn-sm" style="margin-right: 5px">Выйти</button>
+                        <button class="btn btn-danger btn-sm">Выйти</button>
                     </form>
-                    @hasanyrole('admin|moderator')
-                        <a class="btn btn-info btn-sm" href="{{ route('admin.dashboard') }}">Перейти в админ панель</a>
-                    @endhasanyrole
                 </div>
                 @else
                 <div class="d-flex align-items-center justify-content-center mx-3">
-                    <a href="{{ route('auth.loginIndex') }}" class="btn btn-sm color-bg text-light" style="margin-right: 5px">Войти</a>
-                    <a href="{{ route('auth.registerIndex') }}" class="btn btn-warning btn-sm ">Зарегистрироваться</a>
+                    <a href="{{ route('auth.loginIndex') }}" style="margin-right: 5px" class="btn btn-sm color-bg text-light">Войти</a>
+                    <a href="{{ route('auth.registerIndex') }}" class="btn btn-warning btn-sm">Зарегистрироваться</a>
                 </div>
                 @endif
             </ul>

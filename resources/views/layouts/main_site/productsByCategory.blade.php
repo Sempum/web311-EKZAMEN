@@ -30,8 +30,8 @@
 <div class="container">
     <!-- search form -->
     <form class="d-flex mb-3" role="search" method="GET" action="{{ route('app.searchProduct', $category->slug) }}">
-        <input class="form-control mr-2" placeholder="Search" name="search">
-        <button class="btn btn-outline-success" name="searchBtn" type="submit">Search</button>
+        <input class="form-control mr-2" placeholder="Найти модель" name="search">
+        <button class="btn btn-outline-success" name="searchBtn" type="submit">Найти</button>
     </form>
     <!-- product list -->
 
@@ -47,7 +47,7 @@
                     <h5 class="card-title">{{ $prod->name }}</h5>
                     <p class="card-text">{{ $prod->description }}</p>
                     <!-- product documents -->
-                    <div class="d-flex">
+                    <div class="d-flex links">
                         @if ($prod->documents->count())
                             @foreach ($prod->documents as $doc)
                                 @if ($doc->approved == 1)
@@ -82,8 +82,8 @@
 <!-- main content if there is no products -->
 <div class="container">
     <form class="d-flex mb-3" role="search" method="GET" action="{{ route('app.searchProduct', $category->slug) }}">
-        <input class="form-control mr-2" placeholder="Search" name="search">
-        <button class="btn btn-outline-success" name="searchBtn" type="submit">Search</button>
+        <input class="form-control mr-2" placeholder="Найти модель" name="search">
+        <button class="btn btn-outline-success" name="searchBtn" type="submit">Найти</button>
     </form>
 
     <h5 class="title text-danger">К сожалению нет подходящей техники</h5>
@@ -97,7 +97,6 @@
 </div>
 @endif
 
-@if ($user)
 <section class="ready-section sub-section big-space">
     <div class="container">
         <div class="row">
@@ -146,6 +145,5 @@
         </div>
     </div>
 </section>
-@endif
 <!-- form report/create -->
 @endsection

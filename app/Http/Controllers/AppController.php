@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Mail;
 
 class AppController extends Controller
 {
+    /**
+     * view main page
+     */
     public function index()
     {
         $categories = Category::all()->take(6);
@@ -21,16 +24,26 @@ class AppController extends Controller
         ]);
     }
 
+    /**
+     * view about page
+     */
+
     public function about()
     {
         return view('layouts.main_site.about');
     }
+    /**
+     * view contact page
+     */
 
     public function contact()
     {
 
         return view('layouts.main_site.contacts');
     }
+    /**
+     * view document page
+     */
 
     public function sectors()
     {
@@ -40,15 +53,22 @@ class AppController extends Controller
             'categories' => Category::paginate(6)
         ]);
     }
+    /**
+     * view privace page
+     */
+
     public function privacy()
     {
         return view('layouts.main_site.privacy');
     }
+    /**
+     * view page on specific sector
+     */
 
     public function sectorBySlug(string $sectorSlug)
     {
         $sector = Sector::where('slug', $sectorSlug)->first();
-        $categories = Category::where('sector_id', $sector->id)->get();
+        $categories = Category::where('sector_id', $sector->id)->paginate(6);
 
         return view('layouts.main_site.documentations', [
             'categories' => $categories,
@@ -56,6 +76,10 @@ class AppController extends Controller
             'sectors' => Sector::all(),
         ]);
     }
+
+    /**
+     * view page on specific category
+     */
 
     public function categoryBySlug(string $categorySlug)
     {
@@ -65,6 +89,10 @@ class AppController extends Controller
             'category' => $category
         ]);
     }
+
+    /**
+     * view page if user search specific sector
+     */
 
     public function searchCategory(Request $request)
     {
@@ -77,6 +105,10 @@ class AppController extends Controller
             'sectors' => Sector::all()
         ]);
     }
+
+    /**
+     * view page if users search specific product
+     */
 
     public function searchProduct(Request $request, $categorySlug)
     {

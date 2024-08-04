@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Mail;
 
 class ReportController extends Controller
 {
+    /**
+     * Store report to database
+     */
+
     public function storeReport(Request $request)
     {
         $request->validate([
@@ -23,6 +27,10 @@ class ReportController extends Controller
 
         return back();
     }
+
+    /**
+     * Delete report from database
+     */
 
     public function fixReport(Report $report)
     {
